@@ -1,6 +1,8 @@
+
 const sections = document.querySelectorAll("section");
 const navBar = document.querySelector("#navbar__list");
 
+// Dynamically build the navigation.
 function buildNavBar() {
     const frag = document.createDocumentFragment();
     for (const section of sections) {
@@ -16,7 +18,7 @@ function buildNavBar() {
 
 buildNavBar();
 
-
+// Smooth scrolling.
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
         e.preventDefault();
@@ -25,6 +27,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+// Determine which menu item to pick using IntersectionObserver
 window.addEventListener('DOMContentLoaded', () => {
 
 	const observer = new IntersectionObserver(entries => {
