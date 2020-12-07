@@ -53,12 +53,12 @@ window.addEventListener('DOMContentLoaded', () => {
 activemenu(); 
 
 function activemenu() {
-    const currentLocation = location.href;
-    const menuItem = document.querySelectorAll('a');
-    const menuLength = menuItem.length;
-    for (let i = 0; i < menuLength; i++) {
-        if (menuItem[i].href === currentLocation) {
-            menuItem[i].className = "activemenu";
-        }
-    }
+  let buttons = document.querySelectorAll('li');
+  buttons.forEach(button => {
+      button.addEventListener('click', function(){
+          buttons.forEach(btn => btn.classList.remove('activemenu'));
+          this.classList.add('activemenu');
+      });
+  });
+
 }
