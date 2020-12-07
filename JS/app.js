@@ -24,7 +24,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         e.preventDefault();
         const targetElement = document.querySelector(this.getAttribute("href"))
         targetElement.scrollIntoView({behavior: "smooth"});
-        targetElement.classList.add("activemenu");
+        
     });
 });
 
@@ -47,4 +47,12 @@ window.addEventListener('DOMContentLoaded', () => {
 		observer.observe(section);
 	});
 	
+});
+
+document.querySelectorAll('li').forEach(li => {
+    a.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute("class"))
+        targetElement.classList.add("activemenu");
+    });
 });
