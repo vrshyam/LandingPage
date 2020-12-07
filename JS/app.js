@@ -49,10 +49,4 @@ window.addEventListener('DOMContentLoaded', () => {
 	
 });
 
-document.querySelectorAll('li').forEach(li => {
-    a.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute("class"))
-        targetElement.classList.add("activemenu");
-    });
-});
+
